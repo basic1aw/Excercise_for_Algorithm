@@ -1,0 +1,7 @@
+SELECT Sname
+FROM Student
+WHERE Snum in
+(SELECT DISTINCT Snum
+FROM SC
+GROUP BY Snum
+HAVING AVG(Score) > 60);
